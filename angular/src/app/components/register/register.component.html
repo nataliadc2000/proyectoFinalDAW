@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Agregar Usuario</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nombre:</label>
+      <input id="name" [(ngModel)]="newUser.name" name="name">
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" [(ngModel)]="newUser.email" name="email">
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input id="password" [(ngModel)]="newUser.password" name="password">
+    </div>
+    <button type="submit">Agregar</button>
+  </form>
+</div>
