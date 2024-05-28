@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">APES </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/paginaInicio">Inicio</a>
+                </li> <li class="nav-item" *ngIf="isAdmin">
+                    <a class="nav-link active" routerLink="/listadoBarcos">Pagina Barcos</a>
+                </li>
+                <li class="nav-item" *ngIf="isAdmin">
+                    <a class="nav-link active" routerLink="/listadoSalida">Pagina Salida</a>
+                </li>
+                
+                <li class="nav-item" *ngIf="isAdmin">
+                    <a class="nav-link active" routerLink="/listadoPatrones">Subida Archivo importante </a>
+                </li>
+                
+                <li class="nav-item" *ngIf="isAdmin">
+                    <a class="nav-link active" routerLink="/listadoSocios">Pagina Admin</a>
+                </li>
+                <li class="nav-item" *ngIf="!isAdmin">
+                    <a class="nav-link active" routerLink="/misBarcos">Donde Estamos </a>
+                </li>
+                <li class="nav-item" *ngIf="!isAdmin">
+                    <a class="nav-link active" routerLink="/misSalidas">Documentacion Importante </a>
+                </li>
+
+                
+                
+            </ul>
+            <ul class="navbar-nav ml-auto"> <!-- Utilizamos ml-auto para alinear a la derecha -->
+                <li class="nav-item">
+                    <button class="nav-link logout-button" routerLink="/perfil">Mi Perfil</button>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto"> <!-- Utilizamos ml-auto para alinear a la derecha -->
+                <li class="nav-item">
+                    <button class="nav-link logout-button" (click)="logout()">Cerrar sesión</button>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto"> <!-- Utilizamos ml-auto para alinear a la derecha -->
+                <li class="nav-item">
+                    <button class="nav-link logout-button" (click)="eliminarCuenta()">Eliminar Cuenta</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

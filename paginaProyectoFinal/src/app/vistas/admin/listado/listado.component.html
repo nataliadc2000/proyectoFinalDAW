@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración</title>
+</head>
+
+<body>
+  <app-menu></app-menu>
+  <div class="container">
+    <h1 style="text-align: center;">Listado de Socios</h1>
+    <p-table [value]="listaSocios" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5, 10, 20]"
+      [tableStyle]="{'min-width': '50rem'}">
+      <ng-template pTemplate="header">
+        <button class="btn btn-primary" routerLink="/agregarAdmin">Añadir Socio</button>
+
+        <tr>
+          <th>
+            Nombre
+            <p-columnFilter type="text" field="nombre"></p-columnFilter>
+          </th>
+          <th>
+            Apellidos
+            <p-columnFilter type="text" field="apellidos"></p-columnFilter>
+          </th>
+          <th>
+            Dni
+            <p-columnFilter type="text" field="dni"></p-columnFilter>
+          </th>
+          <th>
+            Telefono
+            <p-columnFilter type="text" field="telefono"></p-columnFilter>
+          </th>
+          <th>
+            Email
+            <p-columnFilter type="text" field="email"></p-columnFilter>
+          </th>
+          <th>
+            Rol
+            <p-columnFilter type="text" field="rol"></p-columnFilter>
+          </th>
+
+          <th>
+            Acciones
+          </th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-usu>
+        <tr>
+          <td>{{ usu.nombre }}</td>
+          <td>{{ usu.apellidos }}</td>
+          <td>{{ usu.dni }}</td>
+          <td>{{ usu.telefono }}</td>
+          <td>{{ usu.email }}</td>
+          <td>{{ usu.rol }}</td>
+          <td>
+
+            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-warning"
+              (click)="showDialog(usu)"></button>
+
+            <button pButton pRipple icon="pi pi-trash" (click)="eliminarSocio(usu.idSocio)"></button>
+
+          </td>
+
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <p-dialog header="Modificar Socio" [(visible)]="displayModal" [responsive]="true" [style]="{ 'width': '500px' }" >
+    <form>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="socioSeleccionado.nombre">
+      </div>
+      <div class="mb-3">
+        <label for="apellidos" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" id="apellidos" name="apellidos"
+          [(ngModel)]="socioSeleccionado.apellidos">
+      </div>
+      <div class="mb-3">
+        <label for="dni" class="form-label">DNI</label>
+        <input type="text" class="form-control" id="dni" name="dni" [(ngModel)]="socioSeleccionado.dni">
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="socioSeleccionado.telefono">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="socioSeleccionado.email">
+      </div>
+      <div class="mb-3">
+        <label for="rol" class="form-label">Permiso</label>
+        <select class="form-select" id="rol" name="rol" [(ngModel)]="socioSeleccionado.rol">
+          <option value="admin">Admin</option>
+          <option value="basico">Basico</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-danger" (click)="displayModal = false">Cancelar</button>
+      <button type="button" class="btn btn-primary" (click)="editarSocio()">Guardar cambios</button>
+    </form>
+  </p-dialog>
+
+
+</body>
+
+</html>

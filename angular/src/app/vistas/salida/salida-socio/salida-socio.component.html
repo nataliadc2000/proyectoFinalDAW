@@ -1,0 +1,35 @@
+<app-menu></app-menu>
+<div class="container" id="container" style="width: 20%;  border-radius: 10px; margin-top: 150px;">
+  <h2 style="text-align: center;">Agregar Nueva Salida</h2>
+        <form (submit)="agregarSalida()"  style="max-width: 400px; margin: auto;">
+          <!-- Fecha de Salida -->
+          <div class="mb-3">
+            <label for="fchHoraSalida" class="form-label">Fecha Salida</label>
+            <input type="datetime-local" class="form-control" id="fchHoraSalida" name="fchHoraSalida" [(ngModel)]="nuevaSalida.fchHoraSalida">
+          </div>
+          <!-- Destino -->
+          <div class="mb-3">
+            <label for="destino" class="form-label">Destino</label>
+            <input type="text" class="form-control" id="destino" name="destino" [(ngModel)]="nuevaSalida.destino">
+          </div>
+          <!-- Barco -->
+          <div class="mb-3">
+            <label for="barco" class="form-label">Barco</label>
+            <select class="form-select" id="barco" name="barco" [(ngModel)]="idBarcoSeleccionado">
+              <option *ngFor="let barco of listadoBarcos" [value]="barco.idBarco">{{ barco.nombreBarco }}</option>
+            </select>
+          </div>
+          <!-- Patrón -->
+          <div class="mb-3">
+            <label for="patron" class="form-label">Patrón</label>
+            <select class="form-select" id="patron" name="patron" [(ngModel)]="nuevaSalida.patron">
+              <option *ngFor="let patron of listadoPatrones" [value]="patron.idPatron">{{ patron.nombrePatron }}</option>
+            </select>
+          </div>
+          <!-- Botón de enviar -->
+          <button type="submit" class="btn btn-primary">Agregar Salida</button>
+        </form>
+    </div>
+    
+
+  

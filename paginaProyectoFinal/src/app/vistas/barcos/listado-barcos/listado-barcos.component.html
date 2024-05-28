@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Barcos</title>
+    <style>
+      .container {
+          max-width: 1300px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+      h1 {
+          text-align: center;
+      }
+      .btn-primary {
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      .btn-primary:hover {
+          background-color: #0056b3;
+      }
+  </style>
+</head>
+<body>
+    <app-menu></app-menu>
+    <div class="container">
+        <h1 style="text-align: center;">Listado de Barcos</h1>
+        <p-table [value]="listaBarcos" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5, 10, 20]" [tableStyle]="{'min-width': '50rem'}">
+
+          <ng-template pTemplate="header">
+            <button class="btn btn-primary" routerLink="/añadirBarco">Nuevo Barco</button>
+
+              <tr>
+                  <th>
+                      Matricula
+                      <p-columnFilter type="text" field="numeroMatricula"></p-columnFilter>
+                  </th>
+                  <th>
+                      Barco
+                      <p-columnFilter type="text" field="nombreBarco"></p-columnFilter>
+                  </th>
+                  <th>
+                      Numero Amarre
+                      <p-columnFilter type="text" field="numeroAmarre"></p-columnFilter>
+                  </th>
+                  <th>
+                      Cuota
+                      <p-columnFilter type="text" field="cuotaMensual"></p-columnFilter>
+                  </th>
+                  <th>
+                      Socio
+                      <p-columnFilter type="text" field="socios.nombre"></p-columnFilter>
+                  </th>
+                  <th>
+                    Acciones
+                  </th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-barco>
+              <tr>
+                  <td>{{ barco.numeroMatricula }}</td>
+                  <td>{{ barco.nombreBarco }}</td>
+                  <td>{{ barco.numeroAmarre }}</td>
+                  <td>{{ barco.cuotaMensual }}</td>
+                  <td>{{ getNombreSocio(barco.socios.idSocio) }}</td>
+                  <td>
+                    <button pButton pRipple  icon="pi pi-pencil" class="p-button-rounded p-button-warning" (click)="showDialog(barco)"></button>
+                      
+                      <button pButton pRipple icon="pi pi-trash" 
+                      (click)="eliminarBarco(barco.idBarco)"></button>
+                     
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+
+    </div>
+
+
+    <p-dialog header="Editar Barco" [(visible)]="displayModal" [responsive]="true" [style]="{ 'width': '500px' }" >
+      <form >
+        <!-- Numero de Matricula -->
+        <div class="mb-3">
+          <label for="numeroMatricula" class="form-label">Número de Matrícula</label>
+          <input type="text" class="form-control" id="numeroMatricula" name="numeroMatricula" [(ngModel)]="barcoSeleccionado.numeroMatricula" >
+        </div>
+        <!-- Nombre del Barco -->
+        <div class="mb-3">
+          <label for="nombreBarco" class="form-label">Nombre del Barco</label>
+          <input type="text" class="form-control" id="nombreBarco" name="nombreBarco" [(ngModel)]="barcoSeleccionado.nombreBarco" >
+        </div>
+        <!-- Numero de Amarre -->
+        <div class="mb-3">
+          <label for="numeroAmarre" class="form-label">Número de Amarre</label>
+          <input type="number" class="form-control" id="numeroAmarre" name="numeroAmarre" [(ngModel)]="barcoSeleccionado.numeroAmarre" >
+        </div>
+        <!-- Cuota Mensual -->
+        <div class="mb-3">
+          <label for="cuotaMensual" class="form-label">Cuota Mensual</label>
+          <input type="number" class="form-control" id="cuotaMensual" name="cuotaMensual" [(ngModel)]="barcoSeleccionado.cuotaMensual">
+        </div>
+        <!-- Socio -->
+        <div class="mb-3">
+          <label for="socio" class="form-label">Propietario del Barco</label>
+          <select class="form-select" id="socios" name="socios" [(ngModel)]="barcoSeleccionado.socios.idSocio">
+            <option *ngFor="let socio of listaSocios" [ngValue]="socio.idSocio">{{ socio.nombre }} {{ socio.apellidos }}</option>
+          </select>
+        </div>
+        <!-- Botón de enviar -->
+        <button type="button" class="btn btn-danger" (click)="displayModal = false">Cancelar</button>
+        <button type="button" class="btn btn-primary"(click)="editarBarco()">Guardar cambios</button>
+      </form>
+  </p-dialog>
+ 
+ 
+</body>
+
+</html>

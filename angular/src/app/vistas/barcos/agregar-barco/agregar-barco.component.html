@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+<div class="container" id="container" style="width: 20%;  border-radius: 10px; margin-top: 150px;">
+    <h2 style="text-align: center;">Agregar Nuevo Barco</h2>
+    <form (submit)="agregarBarco()" style="max-width: 400px; margin: auto;" >
+        <!-- Numero de Matricula -->
+        <div class="mb-3">
+            <label for="numeroMatricula" class="form-label">Número de Matrícula</label>
+            <input type="text" class="form-control" id="numeroMatricula" name="numeroMatricula" [(ngModel)]="nuevoBarco.numeroMatricula" required>
+        </div>
+        <!-- Nombre del Barco -->
+        <div class="mb-3">
+            <label for="nombreBarco" class="form-label">Nombre del Barco</label>
+            <input type="text" class="form-control" id="nombreBarco" name="nombreBarco" [(ngModel)]="nuevoBarco.nombreBarco" required>
+        </div>
+        <!-- Numero de Amarre -->
+        <div class="mb-3">
+            <label for="numeroAmarre" class="form-label">Número de Amarre</label>
+            <input type="number" class="form-control" id="numeroAmarre" name="numeroAmarre" [(ngModel)]="nuevoBarco.numeroAmarre" required>
+        </div>
+        <!-- Cuota Mensual -->
+        <div class="mb-3">
+            <label for="cuotaMensual" class="form-label">Cuota Mensual</label>
+            <input type="number" class="form-control" id="cuotaMensual" name="cuotaMensual" [(ngModel)]="nuevoBarco.cuotaMensual" required>
+        </div>
+        <!-- Socio -->
+        <div class="mb-3">
+            <label for="socio" class="form-label">Propietario del Barco</label>
+            <select class="form-select" id="socios" name="socios" [(ngModel)]="idSocioSeleccionado" required>
+                <option *ngFor="let socio of listaSocios" [value]="socio.idSocio">{{ socio.nombre }} {{ socio.apellidos }}</option>
+            </select>
+        </div>
+        <!-- Botón de enviar -->
+        <div style="text-align: center;">
+            <button type="submit" class="btn btn-primary">Agregar Barco</button>
+        </div>
+    </form>
+</div>
