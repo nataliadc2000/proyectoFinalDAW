@@ -2,7 +2,8 @@
 
 
 
-PAGINA DE LA ASOCIACION DE ESTANQUEROS DE SEVILLA 
+![logo_estancos](https://estanquerosdesevilla.com/wp-content/uploads/2023/10/Logo-Principal-e1696517438933.png)
+
 
 Realizado por: 
 Natalia Dominguez
@@ -14,32 +15,30 @@ Natalia Dominguez
 
 Índice con enlace a cada apartado.
 
-Introducción
+* Introducción
 
-1.1. Descripción del proyecto
-1.2. Justificación
-1.3. Objetivos
-1.4. Motivación
+1. Descripción del proyecto
+2. Justificación
+3. Objetivos
+4. Motivación
 
-Funcionalidades del proyecto y tecnologías utilizadas
+* Funcionalidades del proyecto y tecnologías utilizadas
 
-Guia de instalacion
+* Guia de instalacion
 
-Guia de uso
+* Guia de uso
 
-Enlace a la documentación
+* Enlace a la documentación
 
-Enlace a figma de la interfaz
+* Enlace a figma de la interfaz
 
-Conclusión
+* Conclusión
 
-Contribuciones , agradecimiento , referencias
+* Contribuciones , agradecimiento , referencias
 
-Licencias
+* Licencias
 
-Contacto
-
-
+* Contacto
 
 
 
@@ -52,19 +51,21 @@ Contacto
 
 
 
-Introducción del proyecto:
 
-1.1. Descripción del proyecto: 
+
+##Introducción del proyecto:
+
+#1.1. Descripción del proyecto: 
 
 Este proyecto consiste en una página web para la asociación de estanqueros de sevilla y que va a intentar que las personas que no estén en este mundo y quiera consultar alguno de esos documentos pueda observar mediante nuestra , mientras que los que sí están en este mundo y tenga un estanco pueda subir algún archivo que piensen que puede ser de interés a otras personas.
 
 En este proyecto la persona que se quiera registrar tendrá que poner como un campo obligatorio cual es el código de estanco que está asociado y tendrá un historial de todos los archivos que ha subido todo este tiempo por si se eliminase algún día.
 
-	1.2. Justificación:
+	#1.2. Justificación:
 
 Este proyecto está pensado para que ya que en el dia de hoy no existe como tal la asociación de estanqueros de sevilla tenga una página web y no solo eso sino que la gente que le interesa puede consultar algún documento que seria mas dificiles de encontrar buscando por alguna página web.
 
-	1.3.Objetivos:
+	#1.3.Objetivos:
 
 Los objetivos que he tenido en cuenta a la hora de realizar el proyecto son los siguientes:
 
@@ -76,13 +77,13 @@ Debera garantizar la seguridad y privacidad de los datos de los usuarios , espec
 
 
  
-	1.4. Motivación: 
+	#1.4. Motivación: 
 
 En este momento que es la creacion tengo como motivacion que la asociación de estanqueros tenga una pagina web y que las personas fumadores , tenga una pagina en donde tendrá todos los documentos de importancia ( BOJA, SUbida de precios , …) en un solo click sin tener que gastar mucho tiempo.
 
-Funcionalidades del proyecto y tecnologias utilizadas: 
-Funcionalidades principales:
-Página principal:
+#Funcionalidades del proyecto y tecnologias utilizadas: 
+#Funcionalidades principales:
+#Página principal:
 Información general sobre la asociación,como la misión, valores y objetivos.
 Archivos importantes para que lo tenga quien lo quiera observar
 Zona privada para asociados, donde podrán gestionar sus datos, consultar información y acceder a recursos exclusivos e subir archivos que sea de importancia para los no asociados .
@@ -92,18 +93,18 @@ Desarrollado con Laravel y Spring.
 Gestión de usuarios y roles
 
 Tecnologías utilizadas:
-Front-end:
+* Front-end:
 Angular: Framework Typescript para el desarrollo de la interfaz de usuario.
 HTML5: Lenguaje de marcado para la estructura de la página web.
 CSS3: Lenguaje de estilos para el diseño visual de la página web.
-Back-end:
+ * Back-end:
 Laravel: Framework PHP para el desarrollo del servidor web.
 Spring: Framework Java para el desarrollo de aplicaciones web.
 Base de datos relacional (por ejemplo, MySQL, PostgreSQL).
 
 
 
-Guía de instalacion:
+#Guía de instalacion:
   
 Para la parte del codigo tienes que realizar los siguientes pasos:
 Meterte en el repositorio de github 
