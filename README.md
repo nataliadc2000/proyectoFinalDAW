@@ -82,7 +82,18 @@ Debera garantizar la seguridad y privacidad de los datos de los usuarios , espec
 En este momento que es la creacion tengo como motivacion que la asociación de estanqueros tenga una pagina web y que las personas fumadores , tenga una pagina en donde tendrá todos los documentos de importancia ( BOJA, SUbida de precios , …) en un solo click sin tener que gastar mucho tiempo.
 
 #Funcionalidades del proyecto y tecnologias utilizadas: 
+ Las tecnologias utilizadas son las siguientes:
+   - En el caso de lo visual es angular
+   - en el caso de la api para el login y el registro seria con spring y con spring security
+   - En el caso de subida de los archivos se pondra con angular y se guardara en una base de datos de mysql
+     
 #Funcionalidades principales:
+ Las funcionalides principales de esta pagina son las siguientes: 
+ - Entrada de usuarios
+ - Informacion importante del tema de los estancos
+ - Subida de fotos ( si eres usuario) para poder subirla en el proyecto
+ - Saber donde esta el lugar y un elemento de contacto para cualquier duda y pregunta que se debe tener al respecto
+   
 #Página principal:
 Información general sobre la asociación,como la misión, valores y objetivos.
 Archivos importantes para que lo tenga quien lo quiera observar
