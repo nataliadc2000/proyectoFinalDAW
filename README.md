@@ -1,128 +1,110 @@
+# Asociación de Estanqueros de Sevilla
 
-
-
-
-![logo_estancos](https://estanquerosdesevilla.com/wp-content/uploads/2023/10/Logo-Principal-e1696517438933.png)
-
-
-Realizado por: 
-Natalia Dominguez
+**Realizado por:**  
+Natalia Dominguez  
 2º DAW
 
+## Índice
+1. [Introducción](#introducción)
+   1. [Descripción del proyecto](#descripción-del-proyecto)
+   2. [Justificación](#justificación)
+   3. [Objetivos](#objetivos)
+   4. [Motivación](#motivación)
+2. [Funcionalidades del proyecto y tecnologías utilizadas](#funcionalidades-del-proyecto-y-tecnologías-utilizadas)
+3. [Guía de instalación](#guía-de-instalación)
+4. [Guía de uso](#guía-de-uso)
+5. [Enlace a la documentación](#enlace-a-la-documentación)
+6. [Enlace a Figma de la interfaz](#enlace-a-figma-de-la-interfaz)
+7. [Conclusión](#conclusión)
+8. [Contribuciones, agradecimientos y referencias](#contribuciones-agradecimientos-y-referencias)
+9. [Licencias](#licencias)
+10. [Contacto](#contacto)
 
+## Introducción
 
+### Descripción del proyecto
 
+Este proyecto consiste en una página web para la Asociación de Estanqueros de Sevilla. Su objetivo es facilitar el acceso a documentos relevantes para aquellos interesados en el mundo de los estancos y permitir a los asociados subir archivos de interés.
 
-Índice con enlace a cada apartado.
+En este proyecto, los usuarios que deseen registrarse deben proporcionar un código de estanco asociado como campo obligatorio y tendrán un historial de todos los archivos subidos.
 
-* Introducción
+### Justificación
 
-1. Descripción del proyecto
-2. Justificación
-3. Objetivos
-4. Motivación
+El proyecto se desarrolla para dotar a la Asociación de Estanqueros de Sevilla de una página web oficial. Esta plataforma permitirá a los interesados acceder a documentos difíciles de encontrar en otras webs.
 
-* Funcionalidades del proyecto y tecnologías utilizadas
+### Objetivos
 
-* Guia de instalacion
+1. Facilitar la búsqueda de archivos de interés para los usuarios del sector de los estancos.
+2. Proporcionar información detallada de archivos que sería más complicada de encontrar en otras páginas.
+3. Diseñar una interfaz intuitiva y fácil de usar.
+4. Asegurar que todos los documentos en la página estén actualizados.
+5. Garantizar la seguridad y privacidad de los datos de los usuarios.
 
-* Guia de uso
+### Motivación
 
-* Enlace a la documentación
+La motivación principal es crear una plataforma donde la Asociación de Estanqueros tenga su página web oficial y los fumadores puedan encontrar documentos importantes (BOJA, subida de precios, etc.) de manera rápida y eficiente.
 
-* Enlace a figma de la interfaz
+## Funcionalidades del proyecto y tecnologías utilizadas
 
-* Conclusión
+### Funcionalidades principales
 
-* Contribuciones , agradecimiento , referencias
+1. **Página principal:** Información general sobre la asociación, misión, valores y objetivos.
+2. **Archivos importantes:** Disponibles para quien quiera consultarlos.
+3. **Zona privada para asociados:** Gestión de datos, consulta de información y acceso a recursos exclusivos y subida de archivos.
 
-* Licencias
+### Tecnologías utilizadas
 
-* Contacto
+- **Front-end:**
+  - Angular: Framework TypeScript para el desarrollo de la interfaz de usuario.
+  - HTML5: Lenguaje de marcado para la estructura de la página web.
+  - CSS3: Lenguaje de estilos para el diseño visual de la página web.
+- **Back-end:**
+  - Laravel: Framework PHP para el desarrollo del servidor web.
+  - Spring: Framework Java para el desarrollo de aplicaciones web.
+  - Base de datos relacional (por ejemplo, MySQL, PostgreSQL).
 
+## Guía de instalación
 
+### Parte del código
 
+1. Clonar o descargar el repositorio del proyecto desde GitHub.
+2. Abrir cada proyecto en el IDE de preferencia.
+3. **Angular:**
+   - Ejecutar `npm i` para instalar las dependencias.
+4. **Spring:**
+   - Abrir y ejecutar el proyecto directamente.
+5. **Laravel:**
+   - Tener Composer y PHP instalados.
+   - Ejecutar `composer install` para instalar las dependencias.
 
+### Probarlo online
 
+Acceder a la página desplegada en cualquier dispositivo móvil o a través de un QR proporcionado.
 
+## Guía de uso
 
+(Tu guía de uso debería ir aquí, detallando cómo navegar y utilizar cada sección de la página web).
 
+## Enlace a la documentación
 
+[Documentación del proyecto](#)
 
+## Enlace a Figma de la interfaz
 
+[Interfaz en Figma](#)
 
+## Conclusión
 
+(Tu conclusión debería ir aquí, resumir los logros y posibles mejoras futuras).
 
-##Introducción del proyecto:
+## Contribuciones, agradecimientos y referencias
 
-#1.1. Descripción del proyecto: 
+(En este apartado puedes mencionar a las personas que contribuyeron, agradecer a quienes te apoyaron y citar las referencias utilizadas).
 
-Este proyecto consiste en una página web para la asociación de estanqueros de sevilla y que va a intentar que las personas que no estén en este mundo y quiera consultar alguno de esos documentos pueda observar mediante nuestra , mientras que los que sí están en este mundo y tenga un estanco pueda subir algún archivo que piensen que puede ser de interés a otras personas.
+## Licencias
 
-En este proyecto la persona que se quiera registrar tendrá que poner como un campo obligatorio cual es el código de estanco que está asociado y tendrá un historial de todos los archivos que ha subido todo este tiempo por si se eliminase algún día.
+(Tu licencia de uso debería ir aquí, indicando bajo qué términos puede utilizarse el proyecto).
 
-	#1.2. Justificación:
+## Contacto
 
-Este proyecto está pensado para que ya que en el dia de hoy no existe como tal la asociación de estanqueros de sevilla tenga una página web y no solo eso sino que la gente que le interesa puede consultar algún documento que seria mas dificiles de encontrar buscando por alguna página web.
-
-	#1.3.Objetivos:
-
-Los objetivos que he tenido en cuenta a la hora de realizar el proyecto son los siguientes:
-
-Facilitar la busqueda de los archivos que el usuario vea que es de interes sobre este mundo de los estancos
-Proporcionar informacion detalladas de los archivos que seria mas compricada de ser encontrada en otras pagina
-La interfaz que tenia pensado realizar es una my intuitivo y que el usuario que la utilize sepa en todo momento que es lo que tiene que hacer para ver lo que esta buscando
-Todos los documentos que va a estar en la pagina sera de la actualidad por lo que se vera el realismo de los estancos en el dia de hoy
-Debera garantizar la seguridad y privacidad de los datos de los usuarios , especialmente si se recopla informacion personal a traves de formularios de contacto u otros medios
-
-
- 
-	#1.4. Motivación: 
-
-En este momento que es la creacion tengo como motivacion que la asociación de estanqueros tenga una pagina web y que las personas fumadores , tenga una pagina en donde tendrá todos los documentos de importancia ( BOJA, SUbida de precios , …) en un solo click sin tener que gastar mucho tiempo.
-
-#Funcionalidades del proyecto y tecnologias utilizadas: 
- Las tecnologias utilizadas son las siguientes:
-   - En el caso de lo visual es angular
-   - en el caso de la api para el login y el registro seria con spring y con spring security
-   - En el caso de subida de los archivos se pondra con angular y se guardara en una base de datos de mysql
-     
-#Funcionalidades principales:
- Las funcionalides principales de esta pagina son las siguientes: 
- - Entrada de usuarios
- - Informacion importante del tema de los estancos
- - Subida de fotos ( si eres usuario) para poder subirla en el proyecto
- - Saber donde esta el lugar y un elemento de contacto para cualquier duda y pregunta que se debe tener al respecto
-   
-#Página principal:
-Información general sobre la asociación,como la misión, valores y objetivos.
-Archivos importantes para que lo tenga quien lo quiera observar
-Zona privada para asociados, donde podrán gestionar sus datos, consultar información y acceder a recursos exclusivos e subir archivos que sea de importancia para los no asociados .
-
-Back-end:
-Desarrollado con Laravel y Spring.
-Gestión de usuarios y roles
-
-Tecnologías utilizadas:
-* Front-end:
-Angular: Framework Typescript para el desarrollo de la interfaz de usuario.
-HTML5: Lenguaje de marcado para la estructura de la página web.
-CSS3: Lenguaje de estilos para el diseño visual de la página web.
- * Back-end:
-Laravel: Framework PHP para el desarrollo del servidor web.
-Spring: Framework Java para el desarrollo de aplicaciones web.
-Base de datos relacional (por ejemplo, MySQL, PostgreSQL).
-
-
-
-#Guía de instalacion:
-  
-Para la parte del codigo tienes que realizar los siguientes pasos:
-Meterte en el repositorio de github 
-Buscar el repositorio del proyecto y clonarlo en tu local o descargartelo 
-Abre cada uno de los proyectos en el IDE que mas te guste 
-En el angular lo primero que vas a tener que hacer es npm i para descargarte todas las dependencias que hay
-En el spring , solo vas a tener que abrirlo y ejecutarlo
-En laravel , tendras que tener descargado composer, php y hacer el comando composer install para descargarte todas las dependencias que hay
-
-	Para la parte de probarlo online solo vas a tener que buscarlo en cualquier dispositivo movil la pagina donde este desplegado o bien un qr que te enseñaremos para acceder a la misma 
+(Indica aquí la información de contacto de la asociación o del desarrollador).
