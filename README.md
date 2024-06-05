@@ -91,7 +91,7 @@ Acceder a la página desplegada en cualquier dispositivo móvil o a través de u
 
 ## Enlace a Figma de la interfaz
 
-[Interfaz en Figma](#)
+[Interfaz en Figma](https://www.figma.com/design/m6mbsY9ZgicE3BLalt7dBl/Plantilla-Modelo-Trabajo-Final-Grado-DAW?node-id=0-1&t=Ozg5xIHtEmN1N3Zz-0)
 
 ## Conclusión
 
