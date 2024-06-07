@@ -11,6 +11,6 @@ import es.natalia.ApiBarcos.Modelos.Socio;
  */
 @Repository
 public interface RepositorioSocio extends CrudRepository<Socio, Integer> {
-
+	Socio findByEstanco(String numeroEstanco);
 	Optional<Socio> findByEmail(String email);
 }

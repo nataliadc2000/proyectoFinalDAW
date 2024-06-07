@@ -55,7 +55,7 @@ public class SpringSecurityConfig {
 				.csrf(csrf -> csrf.disable())
 				.authorizeHttpRequests(authRequest -> {
 					// Permite acceso a estas url
-					authRequest.requestMatchers("/controladorIniciarSesion/**","/controladorRegistrar/**").permitAll();
+					authRequest.requestMatchers("/controladorIniciarSesion/**","/controladorRegistrar/**","/api/**").permitAll();
 					// Autenticación para cualquier otra solicitud
 					authRequest.anyRequest().authenticated();
 				})

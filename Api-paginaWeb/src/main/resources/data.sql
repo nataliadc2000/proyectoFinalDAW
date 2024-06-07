@@ -27,3 +27,11 @@ INSERT INTO salidas (fch_hora_salida, destino, barco_id_barco, patron_id_patron)
 ('2024-04-22 12:00:00', 'Destino 3', 3, 3),
 ('2024-04-23 13:00:00', 'Destino 4', 4, 4),
 ('2024-04-24 14:00:00', 'Destino 5', 5, 5);
+
+
+INSERT INTO estancos(nombre,codigo,provincia) VALUES 
+('estanco 173',173,'sevilla'),
+('Estanco los remedios',18,'sevilla'),
+('Exp Nº65 Plaza San Lorenzo',65,'sevilla'),
+('Estanco 24 horas Sevilla Miraflores',13,'sevilla'),
+('Sevilla-Exp. Nº52',52,'sevilla'),('Sevilla-Exp Nª82',82,'sevilla');

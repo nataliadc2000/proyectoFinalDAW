@@ -1,9 +1,12 @@
 package es.natalia.ApiBarcos.Modelos;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,4 +32,5 @@ public class Socio {
 
 	private String password;
 	private String rol;
+	private String estanco;
 }

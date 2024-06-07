@@ -28,7 +28,10 @@ public class ServicioSociosImpl implements ISocios {
 	public void añadirSociosAdmin(Socio nuevoSocio) {
 		 repoSocio.save(nuevoSocio);
 	}
-	
+	public boolean verificarEstanco(String numeroEstanco){
+		Socio socioExistente = repoSocio.findByEstanco(numeroEstanco);
+		return socioExistente != null;
+	}
 	@Override
 	public void eliminarSocioPorId(int idSocio) {
 		repoSocio.deleteById(idSocio);

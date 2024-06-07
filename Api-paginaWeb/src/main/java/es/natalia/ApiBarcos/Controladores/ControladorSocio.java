@@ -118,5 +118,11 @@ public class ControladorSocio {
 	    return socios.verificarEmailExistente(email);
 
 	}
+	@GetMapping("/socios/verificar/{estanco}")
+	public boolean verificarEstancoExistente(@PathVariable String estanco) {
+		System.out.println("entrando verificar email");
+	    return socios.verificarEmailExistente(estanco);
+
+	}
 	
 }
