@@ -53,5 +53,7 @@ export class SociosService {
     return this.http.get<boolean>(`${this.urlComprobarEmail}/${email}`);
   }
 
-
+  verificarEstancoExistente(estanco: string): Observable<boolean> {
+    return this.http.get<boolean>(`${this.urlComprobarEmail}/${estanco}`);
+  }
 }

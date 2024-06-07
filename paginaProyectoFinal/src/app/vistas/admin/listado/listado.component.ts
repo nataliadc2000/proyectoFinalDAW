@@ -23,7 +23,8 @@ export class ListadoComponent {
     dni: '',
     telefono: '',
     email: '',
-    rol: ''
+    rol: '',
+    estanco:null
   };
 
   constructor(
@@ -79,7 +80,7 @@ export class ListadoComponent {
       }
     });
   }
-  
+
   //Metodo para editar un socio.
   editarSocio() {
     // Verificar si el idSocio está definido

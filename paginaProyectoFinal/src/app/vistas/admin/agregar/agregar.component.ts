@@ -23,9 +23,10 @@ export class AgregarComponent {
     telefono:'',
     email:'',
     password:'',
-    rol:''
+    rol:'',
+    estanco:0
   }
-  
+
   constructor(private servicioLogin:IniciarSesionService,private router: Router,private servicioMensaje:MensajeService){}
 
   //Metodo para registrar un nuevo usuario desde la vista de admin..

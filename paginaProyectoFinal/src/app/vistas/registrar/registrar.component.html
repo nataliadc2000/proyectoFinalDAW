@@ -14,56 +14,63 @@
 
         <div id="formularioInicio" class="card bg-glass">
           <div class="card-body px-4 py-5 px-md-5">
-            <form (ngSubmit)="registrarNuevoSocio()">
-
+            <form [formGroup]="registroForm" (ngSubmit)="registrarNuevoSocio()">
               <!-- Nombre -->
               <div class="mb-4">
                 <label class="form-label text-dark" for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" [(ngModel)]="nuevoSocio.nombre" class="form-control" required />
+                <input type="text" id="nombre" formControlName="nombre" class="form-control" required />
               </div>
 
               <!-- Apellidos -->
               <div class="mb-4">
                 <label class="form-label text-dark" for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" name="apellidos" [(ngModel)]="nuevoSocio.apellidos" class="form-control" required />
+                <input type="text" id="apellidos" formControlName="apellidos" class="form-control" required />
               </div>
 
               <!-- DNI -->
               <div class="mb-4">
                 <label class="form-label text-dark" for="dni">DNI</label>
-                <input type="text" id="dni" name="dni" [(ngModel)]="nuevoSocio.dni" class="form-control" required />
+                <input type="text" id="dni" formControlName="dni" class="form-control" required />
               </div>
 
               <!-- Teléfono -->
               <div class="mb-4">
                 <label class="form-label text-dark" for="telefono">Teléfono</label>
-                <input type="text" id="telefono" name="telefono" [(ngModel)]="nuevoSocio.telefono" class="form-control" required />
+                <input type="text" id="telefono" formControlName="telefono" class="form-control" required />
               </div>
 
               <!-- Email -->
               <div class="mb-4">
                 <label class="form-label text-dark" for="email">Email</label>
-                <input type="email" id="email" name="email" [(ngModel)]="nuevoSocio.email" class="form-control" required />
+                <input type="email" id="email" formControlName="email" class="form-control" required />
               </div>
 
+              <div class="mb-4">
+                <label class="form-label text-dark" for="estanco">Nº Estanco</label>
+                <input type="text" id="estanco" formControlName="estanco" class="form-control" required />
+              </div>
+
+              <div *ngIf="estancoExiste" class="alert alert-danger">
+                El numero de estanco ya esta registrado.Por favor, introduce un numero de estanco valido
+              </div>
               <!-- Contraseña -->
               <div class="mb-4">
                 <label class="form-label text-dark" for="password">Contraseña</label>
-                <input type="password" id="password" name="password" [(ngModel)]="nuevoSocio.password" class="form-control" required />
+                <input type="password" id="password" formControlName="password" class="form-control" required />
               </div>
 
               <!-- Confirmar contraseña -->
               <div class="mb-4">
-                <label class="form-label text-dark" for="confirmarContrasena">Confirmar Contraseña:</label>
-                <input type="password" id="confirmarContrasena" name="confirmarContrasena" [(ngModel)]="confirmarContrasena" class="form-control" required>
+                <label class="form-label text-dark" for="confirmarContrasena">Confirmar Contraseña</label>
+                <input type="password" id="confirmarContrasena" formControlName="confirmarContrasena" class="form-control" required />
               </div>
 
-              <div *ngIf="contrasenasCoinciden" class="alert alert-danger">{{errorContrasena}}</div>
+              <div *ngIf="passwordsDoNotMatch" class="alert alert-danger">
+                Las contraseñas no coinciden.
+              </div>
 
-              <!-- Botón de Registrar -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Registrarme
-              </button>
+
+              <button type="submit" class="btn btn-primary btn-block mb-4">Registrarme</button>
             </form>
           </div>
         </div>

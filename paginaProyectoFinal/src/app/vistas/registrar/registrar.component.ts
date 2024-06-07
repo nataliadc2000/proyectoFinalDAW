@@ -1,74 +1,103 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Socios } from 'src/app/Modelos/Socios';
 import { IniciarSesionService } from 'src/app/Servicios/iniciar-sesion.service';
 import { MensajeService } from 'src/app/Servicios/mensaje.service';
 import Swal from 'sweetalert2';
+import { ApiService } from 'src/app/Servicios/api.service';
+import { SociosService } from 'src/app/Servicios/socios.service';
 
 @Component({
   selector: 'app-registrar',
   templateUrl: './registrar.component.html',
   styleUrls: ['./registrar.component.css']
 })
-export class RegistrarComponent {
-
-  nuevoSocio: Socios = {
-    idSocio: 0,
-    nombre: '',
-    apellidos: '',
-    dni: '',
-    telefono: '',
-    email: '',
-    password: ''
+export class RegistrarComponent implements OnInit {
+  registroForm: FormGroup;
+estancoExiste = false;
+  constructor(
+    private fb: FormBuilder,
+    private loginService: IniciarSesionService,
+    private router: Router,
+    private apiService:SociosService,
+    private servicioMensaje: MensajeService
+  ) {
+    this.registroForm = this.fb.group({
+      nombre: ['', Validators.required],
+      apellidos: ['', Validators.required],
+      dni: ['', Validators.required],
+      telefono: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      confirmarContrasena: ['', Validators.required],
+      estanco: ['', Validators.required]
+    }, { validators: this.passwordsMatchValidator });
   }
-  contrasenasCoinciden: boolean = false;
-  confirmarContrasena: string = '';
-  errorContrasena: string = '';
 
-  constructor(private loginService: IniciarSesionService, private router: Router,private servicioMensaje:MensajeService) { }
+  ngOnInit(): void {
 
+  }
 
+  passwordsMatchValidator(group: FormGroup): { [key: string]: boolean } | null {
+    const password = group.get('password')?.value;
+    const confirmPassword = group.get('confirmarContrasena')?.value;
+    return password === confirmPassword ? null : { passwordsMismatch: true };
+  }
+
+  seleccionarEstanco(event: Event): void {
+    const codigoEstanco = (event.target as HTMLSelectElement).value;
+    this.registroForm.patchValue({ estanco: codigoEstanco });
+  }
   registrarNuevoSocio(): void {
-    // Verificar si todos los campos obligatorios están llenos
-    if (!this.nuevoSocio.nombre ||
-      !this.nuevoSocio.apellidos ||
-      !this.nuevoSocio.dni ||
-      !this.nuevoSocio.telefono ||
-      !this.nuevoSocio.email ||
-      !this.nuevoSocio.password ||
-      !this.confirmarContrasena) {
-      // Mostrar un mensaje de error o tomar alguna otra acción
-      this.servicioMensaje.mostrarMensajeDeError('Error','Todos los campos son obligatorios');
-      console.error('Todos los campos son obligatorios');
+    console.log(this.registroForm)
+    if (this.registroForm.invalid) {
+      this.servicioMensaje.mostrarMensajeDeError('Error', 'Todos los campos son obligatorios o las contraseñas no coinciden.');
       return;
     }
 
-    // Verificar si las contraseñas coinciden
-    if (this.nuevoSocio.password !== this.confirmarContrasena) {
-      this.contrasenasCoinciden = true;
-      this.errorContrasena = 'Las contraseñas no coinciden.';
-      this.servicioMensaje.mostrarMensajeDeError('Error',this.errorContrasena);
+    const formValues = this.registroForm.value;
+    const numeroEstanco = this.registroForm.get('estanco')?.value;
+    // Verificar si el número de estanco ya existe en la base de datos
+    this.apiService.verificarEstancoExistente(numeroEstanco).subscribe(
+      (existe: boolean) => {
+        if (existe) {
+          this.estancoExiste = true;
+          return; // Detener el proceso de registro
+        }
 
-      console.log(this.errorContrasena)
-      return;
-    }
-    // Si todos los campos están llenos y las contraseñas coinciden, procede con el registro
-    this.loginService.registrar(this.nuevoSocio).subscribe(
+      },
+      (error: any) => {
+        console.error('Error al verificar el estanco:', error);
+      }
+    );
+    const nuevoSocio: Socios = {
+      idSocio: 0,
+      nombre: formValues.nombre,
+      apellidos: formValues.apellidos,
+      dni: formValues.dni,
+      telefono: formValues.telefono,
+      email: formValues.email,
+      password: formValues.password,
+      estanco: formValues.estanco
+    };
+
+    this.loginService.registrar(nuevoSocio).subscribe(
       (response) => {
-        // Manejo de la respuesta del backend
         console.log('Usuario registrado con éxito:', response);
-        // Redirigir a otra página, por ejemplo, la página de inicio de sesión
         this.router.navigate(['/']);
       },
       (error) => {
         if (error.status == 400) {
-          this.servicioMensaje.mostrarMensajeDeError('Error','El correo ya existe');
-          console.error('El correo ya existe')
+          this.servicioMensaje.mostrarMensajeDeError('Error', 'El correo ya existe');
         } else {
-          // Manejo de errores en el registro
           console.error('Error al registrar el usuario:', error);
         }
       }
     );
+  }
+
+  get passwordsDoNotMatch() {
+    return this.registroForm.hasError('passwordsMismatch') && this.registroForm.get('confirmarContrasena')?.touched;
   }
 }

@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/Servicios/authentication.service';
 import { IniciarSesionService } from 'src/app/Servicios/iniciar-sesion.service';
 import Swal from 'sweetalert2';
-
 @Component({
   selector: 'app-iniciar-sesion',
   templateUrl: './iniciar-sesion.component.html',
@@ -15,8 +14,8 @@ constructor(private servicioIniciarSesion:IniciarSesionService,private authentic
 
 email: string='';
 password: string='';
-  
-  
+
+
 
 //Metodo para iniciar sesion.
 iniciarSesion(): void {
@@ -24,12 +23,12 @@ iniciarSesion(): void {
     response => {
       //Almacenamos el token de la sesion
       sessionStorage.setItem('token',response.token);
-      //Almaceno el email 
+      //Almaceno el email
       sessionStorage.setItem('email', this.email);
       console.log('Email iniciar sesion'+this.email);
       this.authenticatedService.saveLogin();
-      this.router.navigate(['/paginaInicio']); 
-    
+      this.router.navigate(['/paginaInicio']);
+
     },
     error => {
       console.error(error);

@@ -8,5 +8,5 @@ export interface Socios{
     telefono:string,
     email:string,
     password?:string,
-    rol?:string
+    rol?:string,estanco:any
 }

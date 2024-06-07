@@ -22,7 +22,8 @@ export class PerfilComponent implements OnInit {
     telefono: '',
     email: '',
     password: '',
-    rol: ''
+    rol: '',
+    estanco:0
   };
 
   ngOnInit(): void {

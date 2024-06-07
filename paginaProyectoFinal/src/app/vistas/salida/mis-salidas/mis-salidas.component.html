@@ -9,7 +9,7 @@
 
 <body>
   <app-menu></app-menu>
- 
+
 <main role="main">
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -18,45 +18,28 @@
         <img src="https://estanquerosdesevilla.com/wp-content/uploads/2023/10/Logo-Principal-e1699636328378.png" alt="Logo" class="logo">
     </div>
 </div>
-  <div class="container">
-    <!-- Example row of columns -->
-    <div class="row">
-      <div class="col-md-3">
-        <h2>Gls</h2>
-        <p>Es una de las principales empresas de paqueteria de España. Ofrece un plazo de entrega
-          estandar nacional de menos de 24 horas , envios express integrado, red nacional e internacional, soluciones IT
-          seguras, lideres en calidad y disponibilidad de servicios adicionales para satisfacer las necesidades de sus clientes.        
-      </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-3">
-        <h2>Mensajeria</h2>
-        <p>Se llama mensajería al servicio que brindan las compañías dedicadas a la entrega de paquetes y correspondencia. A través de estas empresas, una persona puede enviar un objeto, un documento, etc. a otro individuo.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-3">
-        <h2>Western Union</h2>
-        <p> Western Union es un popular empresa de envío y recepción de dinero en efectivo y en cuentas bancarias con presencia en más de 200 países
-          a través de una extensa red de sucursales. Fue fundada en 1851 en Rochester, en el estado de Nueva York, con el fin de crear una gran red de envíos de telegramas. Después de un rápido crecimiento,
-          en 1866 introdujeron el servicio de envíos de dinero a través de su amplia red telegráfica, y lo que ha perdurado hasta ahora
-          como su actividad principal y desde 2006 como actvidad única.
-      </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-3">
-        <h2>BOJA</h2>
-        <p>  El Boletín Oficial de la Junta de Andalucía, BOJA, es el diario oficial de la Junta de Andalucía donde se publican las leyes, disposiciones, actos, anuncios, y textos de cualquier clase,
-          que de acuerdo con el ordenamiento jurídico
-         y en virtud de los principios constitucionales de publicidad de las normas y de seguridad jurídica deben ser objeto de publicación oficial.
-     
-      </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div>
+<p-button (click)="showDialog()" label="Mostrar Servicios de algunos estancos" class="btn-secondary"></p-button>
+<p-dialog header="Detalles" [modal]="true" [(visible)]="visible" [style]="{ 'width': '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [maximizable]="true">
+  <div class="row">
+    <div class="col-md-3">
+      <h2>Gls</h2>
+      <p>Es una de las principales empresas de paqueteria de España. Ofrece un plazo de entrega estandar nacional de menos de 24 horas , envios express integrado, red nacional e internacional, soluciones IT seguras, lideres en calidad y disponibilidad de servicios adicionales para satisfacer las necesidades de sus clientes.</p>
     </div>
-
-    <hr>
-
-  </div> <!-- /container -->
+    <div class="col-md-3">
+      <h2>Mensajeria</h2>
+      <p>Se llama mensajería al servicio que brindan las compañías dedicadas a la entrega de paquetes y correspondencia. A través de estas empresas, una persona puede enviar un objeto, un documento, etc. a otro individuo.</p>
+    </div>
+    <div class="col-md-3">
+      <h2>Western Union</h2>
+      <p>Western Union es un popular empresa de envío y recepción de dinero en efectivo y en cuentas bancarias con presencia en más de 200 países a través de una extensa red de sucursales. Fue fundada en 1851 en Rochester, en el estado de Nueva York, con el fin de crear una gran red de envíos de telegramas. Después de un rápido crecimiento, en 1866 introdujeron el servicio de envíos de dinero a través de su amplia red telegráfica, y lo que ha perdurado hasta ahora como su actividad principal y desde 2006 como actvidad única.</p>
+    </div>
+    <div class="col-md-3">
+      <h2>BOJA</h2>
+      <p>El Boletín Oficial de la Junta de Andalucía, BOJA, es el diario oficial de la Junta de Andalucía donde se publican las leyes, disposiciones, actos, anuncios, y textos de cualquier clase, que de acuerdo con el ordenamiento jurídico y en virtud de los principios constitucionales de publicidad de las normas y de seguridad jurídica deben ser objeto de publicación oficial.</p>
+    </div>
+  </div>
+</p-dialog>
+ <!-- /container -->
 
 <div class="container">
                     <h2>SERVICIOS PARA SOCIOS</h2>

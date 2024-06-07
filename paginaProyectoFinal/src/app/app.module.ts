@@ -4,7 +4,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IniciarSesionComponent } from './vistas/iniciar-sesion/iniciar-sesion.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginaInicioComponent } from './vistas/pagina-inicio/pagina-inicio.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { RegistrarComponent } from './vistas/registrar/registrar.component';
@@ -32,7 +32,7 @@ import { SalidaSocioComponent } from './vistas/salida/salida-socio/salida-socio.
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
- 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +61,7 @@ import { RippleModule } from 'primeng/ripple';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     JwtModule.forRoot({
@@ -75,7 +76,7 @@ import { RippleModule } from 'primeng/ripple';
     TableModule,
     ButtonModule,
     RippleModule
-    
+
 
 
   ],

@@ -16,6 +16,7 @@ import Swal from 'sweetalert2';
 })
 export class MisSalidasComponent implements OnInit {
 
+  visible:boolean = false;
 
   constructor(private servicioMensaje: MensajeService, private servicioSalida: SalidaService, private servicioBarcos: BarcosService, private servicioPatrones: PatronService, private router: Router) { }
 
@@ -37,7 +38,9 @@ export class MisSalidasComponent implements OnInit {
     patron: { idPatron: 0 }
   };
 
-
+showDialog(){
+  this.visible = true;
+}
   ngOnInit(): void {
     this.obtenerEmailSocio();
     console.log('emailsocio: ' + this.email)
