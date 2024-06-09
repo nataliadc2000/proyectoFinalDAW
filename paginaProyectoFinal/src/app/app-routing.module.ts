@@ -25,7 +25,6 @@ const routes: Routes = [
   {path:'listadoSocios',component:ListadoComponent,canActivate:[guardLoginGuard,guardAdminGuard]},
   {path:'listadoBarcos',component:ListadoBarcosComponent,canActivate:[guardLoginGuard,guardAdminGuard]},
   {path:'añadirBarco',component:AgregarBarcoComponent,canActivate:[guardLoginGuard,guardAdminGuard]},
-  {path:'misBarcos',component:MisBarcosComponent},
   {path:'listadoPatrones',component:ListadoPatronesComponent,canActivate:[guardLoginGuard,guardAdminGuard]},
   {path:'añadirPatron',component:AgregarPatronComponent,canActivate:[guardLoginGuard,guardAdminGuard]},
   {path:'añadirSalida',component:AgregarSalidaComponent,canActivate:[guardLoginGuard,guardAdminGuard]},

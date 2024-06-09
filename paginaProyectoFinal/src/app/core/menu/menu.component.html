@@ -15,23 +15,23 @@
                 <li class="nav-item" *ngIf="isAdmin">
                     <a class="nav-link active" routerLink="/listadoSalida">Pagina Salida</a>
                 </li>
-                
+
                 <li class="nav-item" *ngIf="isAdmin">
                     <a class="nav-link active" routerLink="/listadoPatrones">Subida Archivo importante </a>
                 </li>
-                
+
                 <li class="nav-item" *ngIf="isAdmin">
                     <a class="nav-link active" routerLink="/listadoSocios">Pagina Admin</a>
                 </li>
-                <li class="nav-item" *ngIf="!isAdmin">
+                <!-- <li class="nav-item" *ngIf="!isAdmin">
                     <a class="nav-link active" routerLink="/misBarcos">Donde Estamos </a>
-                </li>
+                </li> -->
                 <li class="nav-item" *ngIf="!isAdmin">
                     <a class="nav-link active" routerLink="/misSalidas">Documentacion Importante </a>
                 </li>
 
-                
-                
+
+
             </ul>
             <ul class="navbar-nav ml-auto"> <!-- Utilizamos ml-auto para alinear a la derecha -->
                 <li class="nav-item">
