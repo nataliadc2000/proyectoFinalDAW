@@ -120,7 +120,7 @@ public class ControladorSocio {
 	}
 	@GetMapping("/socios/verificar/{estanco}")
 	public boolean verificarEstancoExistente(@PathVariable String estanco) {
-		System.out.println("entrando verificar email");
+		System.out.println("entrando verificar estanco");
 	    return socios.verificarEmailExistente(estanco);
 
 	}
