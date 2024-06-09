@@ -3,6 +3,7 @@ package es.natalia.ApiBarcos.Controladores;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,11 +17,12 @@ import java.util.List;
 import es.natalia.ApiBarcos.Modelos.Image;
 import es.natalia.ApiBarcos.Servicios.ImageService;
 
+@CrossOrigin(origins = "Http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/images")
 public class ControladorImagen {
     private final ImageService imageService;
-    
+
      @Autowired
     public ControladorImagen(ImageService imageService) {
         this.imageService = imageService;
