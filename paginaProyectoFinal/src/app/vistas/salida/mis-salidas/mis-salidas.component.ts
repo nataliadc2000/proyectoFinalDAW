@@ -4,6 +4,7 @@ import { Barcos } from 'src/app/Modelos/Barcos';
 import { Patrones } from 'src/app/Modelos/Patrones';
 import { Salidas } from 'src/app/Modelos/Salidas';
 import { BarcosService } from 'src/app/Servicios/barcos.service';
+import { ImageService } from 'src/app/Servicios/image.service';
 import { MensajeService } from 'src/app/Servicios/mensaje.service';
 import { PatronService } from 'src/app/Servicios/patron.service';
 import { SalidaService } from 'src/app/Servicios/salida.service';
@@ -18,7 +19,9 @@ export class MisSalidasComponent implements OnInit {
 
   visible:boolean = false;
 
-  constructor(private servicioMensaje: MensajeService, private servicioSalida: SalidaService, private servicioBarcos: BarcosService, private servicioPatrones: PatronService, private router: Router) { }
+  images:any[]=[];
+
+  constructor(private imageService:ImageService,private servicioMensaje: MensajeService, private servicioSalida: SalidaService, private servicioBarcos: BarcosService, private servicioPatrones: PatronService, private router: Router) { }
 
   listadoSalidas: Salidas[] = [];
   email: string = '';
@@ -47,7 +50,18 @@ showDialog(){
     this.obtenerPatrones();
     this.obtenerBarcosPorEmail();
     this.cargarSalidas();
+    this.loadImages();
 
+  }
+  loadImages():void {
+    this.imageService.getImages().subscribe(
+      data => {
+        this.images = data;
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
   //Metodo para eliminar la salida de un socio por su id
@@ -76,6 +90,9 @@ showDialog(){
       }
     });
   }
+
+
+
   //Metodo para editar la saldia de un socio por su id.
   editarSalida() {
     if (this.salidaSeleccionada && this.salidaSeleccionada.idSalida) {

@@ -33,10 +33,23 @@
     <button class="btn" [ngClass]="{'btn-danger': modoEdicion, 'btn-primary': !modoEdicion}" (click)="cambiarModoEdicion()">
       {{ modoEdicion ? 'Desactivar modo edición' : 'Activar modo edición' }}
     </button>
-    
+
     &nbsp;&nbsp;&nbsp;
 
     <button class="btn btn-primary" *ngIf="modoEdicion" (click)="editarSocio()">Editar</button>
 
   </form>
+</div>
+
+<div class="form-group">
+  <div class="form-group">
+    <label for="title">Título:</label>
+    <input type="text" class="form-control" [(ngModel)]="title" placeholder="Ingresa el título">
+  </div>
+  <div class="form-group">
+    <label for="image">Seleccionar Imagen:</label>
+    <input type="file" class="form-control" (change)="onFileSelected($event)">
+  </div>
+  <button class="btn btn-primary" (click)="onUpload()">Subir</button>
+
 </div>

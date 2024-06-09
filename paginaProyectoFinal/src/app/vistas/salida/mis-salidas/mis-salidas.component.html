@@ -93,6 +93,20 @@
                       </div>
                     </div>
                   </div>
+
+                  <div class="container" style="background-color: aqua;">
+                      <h1>Documentos subidos</h1>
+                      <div class="row">
+                        <div class="col-md-4" *ngFor="let image of images">
+                          <div class="card">
+                            <img [src]="'images/'+image.path" class="card-img-top" alt="{{ image.title }}">
+                            <div class="card-body">
+                              <h5 class="card-title">{{ image.title }}</h5>w
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
 </main>
 
 

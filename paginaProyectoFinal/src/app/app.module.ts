@@ -56,7 +56,7 @@ import { RippleModule } from 'primeng/ripple';
     AgregarSalidaComponent,
     MisBarcosComponent,
     MisSalidasComponent,
-    SalidaSocioComponent
+    SalidaSocioComponent,
     ],
   imports: [
     BrowserModule,
