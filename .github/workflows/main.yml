@@ -39,7 +39,6 @@ jobs:
         run: npm run build:prod
     #Deploy to Gihub pages
       - name: Deploy to Pages
-        uses: crazy-max/ghactions-github-pages@v.3.1.0
         with:
           build_dir: dist/
         env: 
