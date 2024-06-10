@@ -34,9 +34,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-    #install dependencies
-      - name: install deps
-        run: npm i
     #Build app for production
       - name: Build app handle
         run: npm run build:prod
