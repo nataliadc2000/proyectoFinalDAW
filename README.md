@@ -87,7 +87,7 @@ Acceder a la página desplegada en cualquier dispositivo móvil o a través de u
 
 ## Enlace a la documentación
 
-[Documentación del proyecto](#)
+[Documentación del proyecto](https://docs.google.com/document/d/1WAzOELxZZBJyt_9Wt3yZS0TxikTGhYv8iGxOr039vus/edit?usp=sharing)
 
 ## Enlace a Figma de la interfaz
 
