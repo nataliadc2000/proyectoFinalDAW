@@ -83,7 +83,13 @@ Acceder a la página desplegada en cualquier dispositivo móvil o a través de u
 
 ## Guía de uso
 
-(Tu guía de uso debería ir aquí, detallando cómo navegar y utilizar cada sección de la página web).
+En la primera pantalla, la de inicio , si no tienes usuario , hay una manera de ir a la pantalla de registro para poder hacerlo,si si estas registrado , rellena los huecos que pone en el login y le das al boton , si esta bien iras a la siguiente pantalla.
+
+La siguiente pantalla es una presentacion de la asocioacion en lo que primero que se ve es la foto de la fabrica de tabaco de sevilla , justo abajo hay una imagen de donde se encuentra la sede y en la ultima parte de la pantalla hay un poco de historia de la misma.
+
+La pantalla de documentacion importante , veras un boton, el cual si pulsas en el te sale una ventana con algunos servicios que puede realizar algunos de los estancos , ademas de este boton , se ve con una imagen de cada uno de los demas , algunos servicios que la asociacion ofrece a los estanqueros que lo necesite en el momento. Al final de esta pantalla hay un cuadro en donde se van a encontrar todas las imagenes que se han subido durante todos los usuarios.
+
+En la pantalla del perfil, ademas de poder editar cualquier dato del usuario , el usuario que esta registrado puede subir alguna foto de interes que le saldra a todos los usuarios ya que puede ser de interes para cualquier otra persona.
 
 ## Enlace a la documentación
 
@@ -95,16 +101,18 @@ Acceder a la página desplegada en cualquier dispositivo móvil o a través de u
 
 ## Conclusión
 
-(Tu conclusión debería ir aquí, resumir los logros y posibles mejoras futuras).
+Es un proyecto que tenia muchas ganas de realizar desde que me lo comentaron 
 
 ## Contribuciones, agradecimientos y referencias
 
-(En este apartado puedes mencionar a las personas que contribuyeron, agradecer a quienes te apoyaron y citar las referencias utilizadas).
+chatgpt, y al APES por sugerirme la idea de este proyecto
 
 ## Licencias
 
-(Tu licencia de uso debería ir aquí, indicando bajo qué términos puede utilizarse el proyecto).
+Echo por natalia dominguez carbajosa
 
 ## Contacto
-
-(Indica aquí la información de contacto de la asociación o del desarrollador).
+Natalia Dominguez Carbajosa
+Tecnica superior en desarrollo de aplicaciones web
+2º WEB
+Sevilla
